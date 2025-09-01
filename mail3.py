@@ -1,6 +1,7 @@
 import os
-from dotenv import load_dotenv
 import smtplib
+
+from dotenv import load_dotenv
 
 website = "https://dvmn.org/profession-ref-program/khudoyan7/Mm9m5/"
 friend_name = "Иван"
@@ -42,4 +43,5 @@ password = os.getenv("EMAIL_PASSWORD")
 server = smtplib.SMTP_SSL('smtp.yandex.ru', 465) 
 server.login(login, password)
 server.sendmail(from_email, to_email, message.encode("UTF-8"))
+
 server.quit()
